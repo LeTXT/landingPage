@@ -3,11 +3,11 @@ import Header from './Header'
 import Main from './Main'
 import Footer from './Footer'
 
-function Layout({onSubmit}) {
+function Layout(props) {
     return (
         <div className='layout'>
             <Header />
-            <Main onSubmit={onSubmit} />
+            <Main  />
             <Footer />
         </div>
     )

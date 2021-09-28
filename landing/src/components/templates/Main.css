@@ -45,6 +45,7 @@ form {
   input {
     width: 100%;
     
+    
     min-width: none;
     display: grid;
     border: 1px solid #dadce0;
