@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from 'axios'
 
 function useForm ({
     initialValues,
@@ -50,6 +51,7 @@ function useForm ({
 
 
 
+
 const Input = () => {
     const form = useForm ({
         initialValues: {
@@ -62,9 +64,8 @@ const Input = () => {
             if(!values.userEmail.includes('@' && '.com')) {
                 errors.userEmail = 'Por favor, insira um email válido.'
             }
-            if(values.userCep.length !== 8 && values.userCep == {"erro": true}) {
+            if(values.userCep.length !== 8) {
                 errors.userCep = 'Por favor, insira um CEP válido.'
-                
             }
 
             return errors
@@ -72,47 +73,49 @@ const Input = () => {
     })
 
     return (
-        <form onSubmit={(e) =>{
-            e.preventDefault()
-        }}>
-            <div className='formField'>
-                <label htmlFor="userNome">Nome</label>
-                <input 
-                    type="text" 
-                    placeholder='Insira seu nome...'
-                    name='nome'
-                    />
-            </div>
-            <div className='formField'>
-                <label htmlFor="userEmail">E-mail</label>
-                <input 
-                    type="text" 
-                    placeholder='email@exemplo.com'
-                    name='userEmail'
-                    id='userEmail'
-                    onBlur={form.handleBlur}
-                    onChange={form.handleChange}
-                    value={form.values.userEmail}
-                    />
-                    {form.touched.userEmail && form.errors.userEmail && <span className='formField__error'>{form.errors.userEmail}</span>}
-            </div>
-            <div className='formField'>
-                <label htmlFor="userCep">CEP</label>
-                <input 
-                    type="text" 
-                    placeholder='00000-00'
-                    name='userCep'
-                    id='userCep'
-                    onBlur={form.handleBlur}
-                    onChange={form.handleChange}
-                    value={form.values.userCep}
-                    />
-                    {form.touched.userCep && form.errors.userCep && <span className='formField__error'>{form.errors.userCep}</span>}
-            </div>
-            <button type='submit'>
-                Enviar
-            </button>
-        </form>
+        <div className="input">
+            <form onSubmit={(e) =>{
+                e.preventDefault()
+            }}>
+                <div className='formField'>
+                    <label htmlFor="userNome">Nome</label>
+                    <input
+                        type="text"
+                        placeholder='Insira seu nome...'
+                        name='nome'
+                        />
+                </div>
+                <div className='formField'>
+                    <label htmlFor="userEmail">E-mail</label>
+                    <input
+                        type="text"
+                        placeholder='email@exemplo.com'
+                        name='userEmail'
+                        id='userEmail'
+                        onBlur={form.handleBlur}
+                        onChange={form.handleChange}
+                        value={form.values.userEmail}
+                        />
+                        {form.touched.userEmail && form.errors.userEmail && <span className='formField__error'>{form.errors.userEmail}</span>}
+                </div>
+                <div className='formField'>
+                    <label htmlFor="userCep">CEP</label>
+                    <input
+                        type="text"
+                        placeholder='0000000'
+                        name='userCep'
+                        id='userCep'
+                        onBlur={form.handleBlur}
+                        onChange={form.handleChange}
+                        value={form.values.userCep}
+                        />
+                        {form.touched.userCep && form.errors.userCep && <span className='formField__error'>{form.errors.userCep}</span>}
+                </div>
+                <button type='submit'>
+                    Enviar
+                </button>
+            </form>
+        </div>
     )
 }
     

@@ -3,8 +3,13 @@
     justify-content: center;
     background-color: #cecfd1;
 } */
-
+* {
+  color: rgba(3, 20, 46, 1);
+}
 main.main {
+
+    width: 100%;
+
     display: grid;
     justify-content: center;
     align-content: center;
@@ -13,12 +18,16 @@ main.main {
 
     
 }
+.input {
+
+  max-width: 100%;
+}
 
 form {
     margin: auto;
-    width: 100%;
+    
     max-width: 500px;
-    border: 1px solid #dadce0;
+    
     padding: 40px;
     border-radius: 4px;
   }
@@ -35,7 +44,9 @@ form {
   
   input {
     width: 100%;
-    display: block;
+    
+    min-width: none;
+    display: grid;
     border: 1px solid #dadce0;
     border-radius: 4px;
     white-space: normal;
@@ -44,11 +55,12 @@ form {
     padding: 13px 15px;
     text-align: left;
     transition: border .5s;
+
   }
   
   input:focus,
   input:hover {
-    border: 1px solid #1a73e8;
+    border: 1px solid rgba(124, 149, 191, 1);
   }
   
   .formField__error {
@@ -61,14 +73,28 @@ form {
   button {
     font-size: 16px;
     border-radius: 4px;
-    background: #1a73e8;
+    background: rgba(3, 20, 46, 1);
     color: #fff;
     border: 0;
-    padding: 8px 16px;
-    transition: opacity .5s;
+    padding: 16px 32px;
+    transition: .3s;
+
+    width: 174px;
+    height: 48px;
+    border-radius: 8px;
+
   }
   
-  button:focus,
   button:hover {
-    opacity: .5;
+    background-color: rgba(124, 149, 191, 1);
   }
+  
+  button:focus {
+    background-color: rgba(2, 12, 28, 1);
+  }
+
+@media (max-width) {
+  form {
+   
+  }
+}
