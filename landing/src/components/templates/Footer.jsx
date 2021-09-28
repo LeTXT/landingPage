@@ -3,5 +3,6 @@ import './Footer.css'
 
 export default props => 
     <footer className="footer">
-        footer
+        <p>© 2019 Consórcio Embracon
+Todos os direitos reservados.</p>
     </footer>

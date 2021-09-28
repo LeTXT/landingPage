@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, usaEffect } from "react";
 import './Input.css'
 import {
     TextField,

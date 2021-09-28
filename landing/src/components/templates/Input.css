@@ -1,20 +1,27 @@
-input.input {
-    
-}
 
-.button {
+button.button {
     padding: 16px 32px;
     margin: 32px;
     background-color: rgba(3, 20, 46, 1);
-    color: #fff;
+    
     border-radius: 8px;
     width: 174px;
     height: 48px;
 
-    
+    box-shadow: none;
   }
   
 .button:hover {
     background-color: rgba(124, 149, 191, 1);
     
   }
+
+.button:active {
+  background-color: rgba(2, 12, 28, 1);
+}
+
+  .input {
+    padding: 30px;
+    background-color: #fff;
+}
+

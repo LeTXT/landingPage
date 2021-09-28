@@ -5,7 +5,7 @@ import Footer from './Footer'
 
 function Layout({onSubmit}) {
     return (
-        <div>
+        <div className='layout'>
             <Header />
             <Main onSubmit={onSubmit} />
             <Footer />
